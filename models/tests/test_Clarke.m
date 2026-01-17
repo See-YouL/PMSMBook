@@ -23,7 +23,7 @@ function test_Clarke()
     load_system(model);
 
     %% 2. 构造常数输入信号（用 timeseries，保证外部输入稳定）
-    Ts = 1e-4;          % 采样时间
+    Ts = 1e-4;          % 采样时间(步长)
     Tstop = 1e-3;       % 仿真结束时间（常数测试很短即可）
     t = (0:Ts:Tstop)';  % 时间向量
 
@@ -55,6 +55,7 @@ function test_Clarke()
 
     %% 6. 打印结果
     fprintf('Clarke 常数输入测试结果：\n');
+    fprintf('  输入信号： A=1, B=-0.5, C=-0.5\n');
     fprintf('  Alpha = %.6f\n', alpha_end);
     fprintf('  Beta  = %.6f\n', beta_end);
 
