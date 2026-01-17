@@ -1,13 +1,13 @@
-function test_Clarke()
-% TEST_CLARKE
-% 使用 Inport A/B/C 对 Clarke_Test.slx 进行常数输入测试
+function test_Clark()
+% TEST_Clark
+% 使用 Inport A/B/C 对 Clark_Test.slx 进行常数输入测试
 %
 % 测试输入：
 %   A = 1
 %   B = -0.5
 %   C = -0.5
 %
-% 对于 2/3 幅值不变 Clarke 变换，理论结果应为：
+% 对于 2/3 幅值不变 Clark 变换，理论结果应为：
 %   Alpha = 1
 %   Beta  = 0
 %
@@ -17,7 +17,7 @@ function test_Clarke()
 %      变量名分别为：alpha_out, beta_out
 
     %% 1. 模型名称
-    model = 'Clarke_Test';
+    model = 'Clark_Test';
 
     % 加载模型（不打开界面也可以）
     load_system(model);
@@ -54,7 +54,7 @@ function test_Clarke()
     beta_end  = beta(end);
 
     %% 6. 打印结果
-    fprintf('Clarke 常数输入测试结果：\n');
+    fprintf('Clark 常数输入测试结果：\n');
     fprintf('  输入信号： A=1, B=-0.5, C=-0.5\n');
     fprintf('  Alpha = %.6f\n', alpha_end);
     fprintf('  Beta  = %.6f\n', beta_end);
@@ -63,8 +63,8 @@ function test_Clarke()
     % 理论值：Alpha = 1, Beta = 0
     tol = 1e-6;  % 允许误差
 
-    assert(abs(alpha_end - 1) < tol, '❌ Alpha 结果错误');
-    assert(abs(beta_end  - 0) < tol, '❌ Beta 结果错误');
+    assert(abs(alpha_end - 1) < tol, 'Alpha 结果错误');
+    assert(abs(beta_end  - 0) < tol, 'Beta 结果错误');
 
-    fprintf('✅ Clarke 常数输入测试通过\n');
+    fprintf('Clark 常数输入测试通过\n');
 end

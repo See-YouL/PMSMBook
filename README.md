@@ -14,10 +14,10 @@ PMSMBook/                  （工程根目录）
 │  └─ MyPMSMLibrary.slx     （你的库）
 ├─ models/
 │  ├─ tests/
-│  │  └─ Clarke_Test.slx     （Clarke 单元测试模型）
+│  │  └─ Clark_Test.slx     （Clark 单元测试模型）
 │  └─ demos/                （以后放示例模型）
 ├─ blocks/                  （可选：如果你想放子系统源模型）
-│  └─ Clarke_Source.slx
+│  └─ Clark_Source.slx
 ├─ scripts/
 │  ├─ startup.m             （工程打开时自动跑）
 │  └─ run_all_tests.m        （一键运行测试）
