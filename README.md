@@ -10,6 +10,8 @@
 ```txt
 PMSMBook/                  （工程根目录）
 ├─ PMSM.prj                （工程文件）
+|- 现代永磁同步电机控制原理及MATLAB仿真.pdf (参考书)
+|- Notes.md (笔记)
 ├─ README.md               （可选）
 ├─ libraries/
 │  └─ MyPMSMLibrary.slx     （你的库）
