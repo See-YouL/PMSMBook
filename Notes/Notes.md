@@ -158,8 +158,7 @@ Clark变换公式为
 $$
 \begin{bmatrix}
 f_{\alpha} & f_{\beta} & f_{0}
-\end{bmatrix}^T
-=
+\end{bmatrix}^T=
 T_{3s/2s}
 \begin{bmatrix}
 f_{A} & f_{B} & f_{C}
@@ -174,8 +173,7 @@ $$
 坐标变换矩阵可表示为
 
 $$
-T_{3s/2s}
-=
+T_{3s/2s}=
 \frac{2}{3}
 \begin{bmatrix}
 1 & -\frac{1}{2} & -\frac{1}{2} \\
@@ -189,8 +187,7 @@ $$
 $$
 \begin{bmatrix}
 f_{A} & f_{B} & f_{C}
-\end{bmatrix}^T
-=
+\end{bmatrix}^T=
 T_{2s/3s}\begin{bmatrix}
 f_{\alpha} & f_{\beta} & f_{0}
 \end{bmatrix}^T
@@ -199,10 +196,8 @@ $$
 坐标变换矩阵可表示为
 
 $$
-T_{2s/3s}
-=
-T_{3s/2s}^{-1}
-=
+T_{2s/3s}=
+T_{3s/2s}^{-1}=
 \frac{2}{3}
 \begin{bmatrix}
 1 & 0 & \frac{\sqrt{2}}{2} \\
