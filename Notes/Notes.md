@@ -153,7 +153,7 @@ $$
 
 ### Clark变换与仿真建模
 
-坐标变换公式
+Clark变换公式为
 
 $$
 \begin{bmatrix}
