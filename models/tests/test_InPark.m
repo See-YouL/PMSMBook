@@ -23,7 +23,7 @@ function test_InPark()
     %% 1. 模型名称（改成你的 slx 文件名，不要带 .slx）
     model = 'InPark_Test';
 
-    % 先加载库（如果 Park_Test 引用了 MyPMSMLibrary，建议加载）
+    % 先加载库）
     load_system('MyPMSMLibrary');
 
     % 加载模型（不打开界面也可）
