@@ -19,8 +19,9 @@ function test_ClarkPark()
     %% 1. 模型名称（按你的 slx 文件名改）
     model = 'ClarkPark_Test';   % 如果你的模型叫别的名字，这里改成对应 slx 的名字（不带 .slx）
 
-    % 先加载库）
+    %% 先加载库
     load_system('MyPMSMLibrary');
+
     %% 2. 加载模型（不需要打开界面）
     load_system(model);
 
@@ -73,5 +74,5 @@ function test_ClarkPark()
     assert(abs(d_end - 1) < tol, 'd 结果错误');
     assert(abs(q_end - 0) < tol, 'q 结果错误');
 
-    fprintf('ClarkPark 常数输入测试通过 ✅\n');
+    fprintf('ClarkPark 常数输入测试通过\n');
 end
