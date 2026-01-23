@@ -219,3 +219,126 @@ Clark变换仿真建模：
 - 反Clark变换仿真建模在`\Librarys\MyPMSMLibrary.slx\Transforms\InClark_Transform`
 - 反Clark变换仿真测试模型在 `\models\tests\InClark_Test.slx`
 - 反Clark变换仿真测试脚本在 `\models\tests\test_InClark.m`
+
+### Park变换与仿真建模
+
+将静止坐标系 $\alpha-\beta$ 变换到同步坐标系 $dq$ 的坐标变换成为Park变换，变换公式为
+
+$$
+\begin{bmatrix}
+f_{d} & f_{q}
+\end{bmatrix}^T=
+T_{2s/2r}
+\begin{bmatrix}
+f_{\alpha} & f_{\beta}
+\end{bmatrix}^T
+$$
+
+其中 $T_{2s/2r}$ 为变换矩阵，可表示为
+
+$$
+T_{2s/2r}=
+\begin{bmatrix}
+cos\theta_{e} & sin\theta_{e} \\
+-sin\theta_{e} & cos\theta_{e}
+\end{bmatrix}
+$$
+
+将同步坐标系 $dq$ 变换到静止坐标系 $\alpha-\beta$ 的坐标变换成为反Park变换，表示为
+
+$$
+\begin{bmatrix}
+f_{\alpha} & f_{\beta}
+\end{bmatrix}^T=
+T_{2r/2s}
+\begin{bmatrix}
+f_{d} & f_{q}
+\end{bmatrix}^T
+$$
+
+其中 $T_{2r/2s}$ 为变换矩阵，可表示为
+
+$$
+T_{2r/2s}=
+T_{2s/2r}^{-1}=
+\begin{bmatrix}
+cos\theta_{e} & -sin\theta_{e} \\
+sin\theta_{e} & cos\theta_{e}
+\end{bmatrix}
+$$
+
+将自然坐标系 $ABC$ 直接变换到同步坐标系 $dq$ 的坐标变换成为Clark-Park变换，变换公式为
+
+$$
+\begin{bmatrix}
+f_{d} & f_{q} & f_{0}
+\end{bmatrix}^T=
+T_{3s/2r}
+\begin{bmatrix}
+f_{A} & f_{B} & f_{C}
+\end{bmatrix}^T
+$$
+
+其中 $T_{3s/2r}$ 为变换矩阵，可表示为
+
+$$
+T_{3s/2r}=
+T_{3s/2s} \cdot T_{2s/2r}=
+\frac{2}{3}
+\begin{bmatrix}
+cos\theta_{e} & cos(\theta_{e} - 2\pi/3) & cos(\theta_{e} + 2\pi/3) \\
+-sin\theta_{e} & -sin(\theta_{e} - 2\pi/3) & -sin(\theta_{e} + 2\pi/3) \\
+\frac{1}{2} & \frac{1}{2} & \frac{1}{2}
+\end{bmatrix}
+$$
+
+将同步坐标系 $dq$ 直接变换到自然坐标系 $ABC$ 的坐标变换成为反Clark-Park变换，表示为
+
+$$
+\begin{bmatrix}
+f_{A} & f_{B} & f_{C}
+\end{bmatrix}^T=
+T_{2r/3s}
+\begin{bmatrix}
+f_{d} & f_{q} & f_{0}
+\end{bmatrix}^T
+$$
+
+其中 $T_{2r/3s}$ 为变换矩阵，可表示为
+
+$$
+T_{2r/3s}=
+T_{3s/2r}^{-1}=
+\frac{2}{3}
+\begin{bmatrix}
+cos\theta_{e} & -sin\theta_{e} & \frac{1}{2} \\
+cos(\theta_{e} - 2\pi/3) & -sin(\theta_{e} - 2\pi/3) & \frac{1}{2} \\
+cos(\theta_{e} + 2\pi/3) & -sin(\theta_{e} + 2\pi/3) & \frac{1}{2}
+\end{bmatrix}
+$$
+
+- 当采用幅值不变作为约束条件时，变换矩阵前的系数为 $\frac{2}{3}$
+- 当采用功率不变作为约束条件式，变换矩阵前的系数为 $\sqrt{\frac{2}{3}}$
+- 对于三相对称系统而言，在计算时零序向量 $f_{0}$ 恒为零，可省略不计
+
+Park变换仿真建模：
+
+![图1-4 静止坐标系与同步旋转坐标系之间的变换关系](image-2.png)
+
+- Park变换仿真建模在 `\Librarys\MyPMSMLibrary.slx\Transforms\Park_Transform`
+- Park变换仿真测试模型在 `\models\tests\Park_Test.slx`
+- Park变换仿真测试脚本在 `\models\tests\test_Park.m`
+- 反Park变换仿真建模在`\Librarys\MyPMSMLibrary.slx\Transforms\InPark_Transform`
+- 反Park变换仿真测试模型在 `\models\tests\InPark_Test.slx`
+- 反Park变换仿真测试脚本在 `\models\tests\test_InPark.m`
+
+Clark-Park变换仿真建模：
+
+![图1-5 自然坐标系与同步旋转坐标系之间的变换关系](image-3.png)
+
+- Clark-Park变换仿真建模在 `\Librarys\MyPMSMLibrary.slx\Transforms\ClarkPark_Transform`
+- Clark-Park变换仿真测试模型在 `\models\tests\ClarkPark_Test.slx`
+- Clark-Park变换仿真测试脚本在 `\models\tests\test_ClarkPark.m`
+- 反Clark-Park变换仿真建模在`\Librarys\MyPMSMLibrary.slx\Transforms\InClarkPark_Transform`
+- 反Clark-Park变换仿真测试模型在 `\models\tests\InClarkPark_Test.slx`
+- 反Clark-Park变换仿真测试脚本在 `\models\tests\test_InClarkPark.m`
