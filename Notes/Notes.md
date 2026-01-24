@@ -342,3 +342,24 @@ Clark-Park变换仿真建模：
 - 反Clark-Park变换仿真建模在`\Librarys\MyPMSMLibrary.slx\Transforms\InClarkPark_Transform`
 - 反Clark-Park变换仿真测试模型在 `\models\tests\InClarkPark_Test.slx`
 - 反Clark-Park变换仿真测试脚本在 `\models\tests\test_InClarkPark.m`
+
+### 两种常用坐标系之间的关系
+
+这本书中所用的坐标系和MATLAB自带的坐标系定义略有不同，具体关系如下：
+
+![图1-6 MATLAB自身使用的各个坐标系之间的关系](image-4.png)
+
+![MATLAB Park Transform](image-5.png)
+
+![MATLAB Park Transform 选项](image-7.png)
+
+![MATLAB Park Transform 描述](image-6.png)
+
+- 当选择a轴和q轴初始对齐时，MATLAB 使用是图1-6的分布与本书不同
+- 当选择a轴和d轴初始对齐时，MATLAB 使用的是与本书相同的分布
+
+## 同步旋转坐标系下的数学建模
+
+### 数学建模
+
+在同步旋转坐标系d-q下的数学模型，其定子电压方程可表示为：
