@@ -439,3 +439,11 @@ $$
 - $\omega_{e}$ : 电机电角速度，单位为弧度每秒(rad/s)，表示电机电角位置变化的速率。
 
 这个公式表示电机的电角度是电角速度对时间的积分，反映了电机电角位置随时间的变化情况。
+
+### 仿真建模
+
+![电磁转矩计算](image-9.png)
+
+- 同步旋转坐标系下的电磁转矩计算仿真模型在 `\Librarys\MyPMSMLibrary.slx\ModerModel\ElecTorqueCalculation`
+- 同步旋转坐标系下的电磁转矩计算测试模型在 `\models\tests\ElecTorqueCalculation_Test.slx`
+- 同步旋转坐标系下的电磁转矩计算测试脚本在 `\models\tests\test_ElecTorqueCalculation.m`
